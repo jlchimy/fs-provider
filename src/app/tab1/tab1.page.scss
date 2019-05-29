@@ -1,8 +1,41 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.grid {
+  --columns: 300px 300px 300px 300px;
+  --row: 250px;
 }
 
-ion-content {
+ion-list {
+  padding: 2% 10%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: var(--columns);
+  grid-template-rows: var(--row);
+  justify-content: center;
   padding: 0 10%;
+}
+
+.grid img {
+  height: 160px;
+}
+
+@media all and (max-width: 1200px) {
+  .grid {
+      --columns: 300px 300px 300px;
+      --row: 220px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .grid {
+      --columns: 300px 300px;
+      --row: 220px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .grid {
+      --columns: 300px;
+      --row: 220px;
+  }
 }

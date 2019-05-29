@@ -1,11 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Rentals
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    
+  <ion-list>
+    <b style="font-size: 200%; margin-bottom: 10%">Rentals</b>
+    <div style="color: grey">Review your current listings.</div>
+  </ion-list>
+  <ion-list class="grid">
+    <ion-card *ngFor="let transaction of transactions">
+      <ion-card-content>
+        <button (click)="navToDetails()">
+          <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
+          <b>{{transaction.place}}</b>
+        </button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
