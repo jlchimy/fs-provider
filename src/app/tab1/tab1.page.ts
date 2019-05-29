@@ -40,12 +40,12 @@ export class Tab1Page implements OnInit {
     this.users.push(user2);
   }
 
-  navToExplore() {
-    this.navCtrl.navigateForward('tabs');
+  navToLogin() {
+    this.navCtrl.navigateBack('');
   }
 
   navToDetails() {
-    this.navCtrl.navigateForward('details');
+    this.navCtrl.navigateBack('details');
   }
 
   ngOnInit() {

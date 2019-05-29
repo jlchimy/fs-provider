@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Fill out information on your rental.
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" name="location" placeholder="Location"></ion-input>
+    </ion-item>
+    <ion-item>
+        <form action="/action_page.php">
+          <select name="birth-month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value='December'>December</option>
+          </select>
+        </form>
+    </ion-item>
+  </ion-list>
+</ion-content>
