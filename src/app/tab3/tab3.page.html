@@ -1,15 +1,13 @@
 <ion-content>
   <ion-list>
-    <b style="font-size: 200%; margin-bottom: 10%">Current Listing</b>
+    <b style="font-size: 200%; margin-bottom: 10%">Current Rentals</b>
     <div style="color: grey">Select a listing to modify.</div>
   </ion-list>
   <ion-list class="grid">
     <ion-card *ngFor="let transaction of transactions">
-      <ion-card-content>
-        <button (click)="navToEdit()">
-          <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
-          <b>{{transaction.place}}</b>
-        </button>
+      <ion-card-content (click)="navToEdit()">
+        <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
+        <b>{{transaction.place}}</b>
       </ion-card-content>
     </ion-card>
   </ion-list>
