@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Property } from '../models';
+import { PropertyService } from '../services/property.service';
 
 @Component({
   selector: 'app-details',
@@ -20,16 +21,9 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private propertyService: PropertyService
   ) { 
-    this.properties = new Array();
-    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", 1);
-    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", 2);
-    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", 3);
-    this.properties.push(capetown);
-    this.properties.push(rome);
-    this.properties.push(odessa);
-
   }
 
   navToEdit() {
@@ -49,15 +43,14 @@ export class DetailsPage implements OnInit {
       this.price = data.params.price;
       this.imgName = data.params.img;
       this.propertyID = data.params.id;
-      //this.curr = new Property(this.price, this.propertyName, this.imgName, this.propertyID);
 
-      this.properties.forEach(
-        (property: Property) => {
-          if (property.id == this.propertyID) {
-            this.curr = property;
-         }
-       } 
-      )
+      this.curr = 
+        this.propertyService.findPropertyById(this.propertyID);
+
+      if (!this.curr) {
+        alert("Property Not Found");
+      }
+
     }
 
     this.activatedRoute.queryParamMap.subscribe(

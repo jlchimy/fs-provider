@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { User, Property, Payment } from '../models/index';
+import { PropertyService } from '../services/property.service';
 
 
 @Component({
@@ -16,15 +17,11 @@ export class Tab1Page implements OnInit {
   public users: Array<User>;
 
   constructor(
-    private navCtrl: NavController
-  ) {
-    this.properties = new Array();
-    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", 1);
-    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", 2);
-    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", 3);
-    this.properties.push(capetown);
-    this.properties.push(rome);
-    this.properties.push(odessa);
+    private navCtrl: NavController,
+    private propertyService: PropertyService
+  ) 
+  {
+    this.properties = this.propertyService.getAllProperties();
 
     this.users = new Array();
 
