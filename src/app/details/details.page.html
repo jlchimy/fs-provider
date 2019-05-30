@@ -9,10 +9,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let transaction of transactions">
-    <a *ngIf = "transaction.place == Rome">
-    </a>
+  <ion-card>
+    <ion-card-content>
+      <img src="{{imgName}}" alt={{propertyName}}>
+      <b>{{propertyName}}</b>
+    </ion-card-content>
   </ion-card>
+
 
 
 </ion-content>

@@ -19,9 +19,9 @@ export class Tab1Page implements OnInit {
     private navCtrl: NavController
   ) {
     this.properties = new Array();
-    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", "navToDetails");
-    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", "navToDetails");
-    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", "navToDetails");
+    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg");
+    let rome = new Property(350, "Rome", "assets/icon/rome.jpg");
+    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg");
     this.properties.push(capetown);
     this.properties.push(rome);
     this.properties.push(odessa);
@@ -44,8 +44,15 @@ export class Tab1Page implements OnInit {
     this.navCtrl.navigateBack('');
   }
 
-  navToDetails() {
-    this.navCtrl.navigateBack('details');
+  navToDetails(property: Property) {
+    this.navCtrl
+      .navigateBack('details', {
+        queryParams: {
+          propertyName: property.place,
+          price: property.price,
+          img: property.imgName
+        }
+      });
   }
 
   ngOnInit() {

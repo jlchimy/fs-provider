@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPage implements OnInit {
 
-  constructor() { }
+  public propertyName: string;
+  public price: number;
+  public imgName: string;
+
+  constructor(
+    private navCtrl: NavController,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    let receivedQueryParams = function(data: any) {
+      arrow(data);
+    }
+
+    let arrow = (data: any) => {
+      this.propertyName = data.params.propertyName;
+      this.price = data.params.price;
+      this.imgName = data.params.img;
+    }
+
+    this.activatedRoute.queryParamMap.subscribe(
+      receivedQueryParams
+    );
   }
 
 }

@@ -5,7 +5,7 @@
   </ion-list>
   <ion-list class="grid">
     <ion-card *ngFor="let property of properties">
-      <ion-card-content (click)="navToDetails()">
+      <ion-card-content (click)="navToDetails(property)">
         <img src="{{property.imgName}}" alt="{{property.place}}">
         <b>{{property.place}}</b>
       </ion-card-content>
