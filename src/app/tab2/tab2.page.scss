@@ -1,3 +1,22 @@
 form {
   display: flex;
 }
+
+ion-card {
+  width: 80%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+ion-button {
+  display: flex; 
+  justify-content: center;
+}
+
+.range {
+  border: solid 1px black;
+  margin: 0 5px;
+}

@@ -12,22 +12,28 @@
       <ion-input type="text" name="location" placeholder="Location"></ion-input>
     </ion-item>
     <ion-item>
-        <form action="/action_page.php">
-          <select name="birth-month">
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value='December'>December</option>
-          </select>
-        </form>
+        <ion-input type="number" name="price" placeholder="Price">$</ion-input>
     </ion-item>
+    <ion-item style="width: 30%">
+      <ion-label style="padding-right: 5px">Number of Guests:</ion-label>
+      <ion-input class="range" type="number" name="numGuestsMin"></ion-input>
+      to
+      <ion-input class="range" type="number" name="numGuestsMax"></ion-input>   
+    </ion-item>
+    <ion-item>
+      <ion-label>Dates Available:</ion-label>
+    </ion-item>
+    <section>
+      <ion-card>
+        <ion-label style="padding: 0 10px">From: </ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-card>
+      <ion-card>
+        <ion-label style="padding: 0 10px">To:</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate1"></ion-datetime>
+      </ion-card>
+    </section>   
   </ion-list>
 </ion-content>
+
+<ion-button (click)="navToRentals()"  shape="round" size="default">Submit</ion-button>
