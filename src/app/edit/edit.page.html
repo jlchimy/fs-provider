@@ -8,10 +8,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <img src="{{imgName}}" alt={{propertyName}}>
-      <b>{{propertyName}}</b>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row justify-content-center style="margin: 0 3%">
+      <ion-col>
+        <div class="important">
+          <b>{{propertyName}}</b>
+        </div>
+        <div class="container">
+          <img src="{{imgName}}" alt="{{propertyName}}">
+          <div class="overlay">
+            <div class="text">
+              <i>*Enter sample review here*</i>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+      
+
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>
