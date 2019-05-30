@@ -19,9 +19,9 @@ export class Tab1Page implements OnInit {
     private navCtrl: NavController
   ) {
     this.properties = new Array();
-    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg");
-    let rome = new Property(350, "Rome", "assets/icon/rome.jpg");
-    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg");
+    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", 1);
+    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", 2);
+    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", 3);
     this.properties.push(capetown);
     this.properties.push(rome);
     this.properties.push(odessa);
@@ -50,7 +50,8 @@ export class Tab1Page implements OnInit {
         queryParams: {
           propertyName: property.place,
           price: property.price,
-          img: property.imgName
+          img: property.imgName, 
+          id: property.id
         }
       });
   }

@@ -8,15 +8,15 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab2Page implements OnInit {
 
-  public days: Array<number>;
+  public minDate: string;
+  public startDate: string;
 
   constructor(
     private navCtrl: NavController
   ) {
-    this.days = new Array();
-    for (let i = 0; i < 31; i++) {
-      this.days.push(i+1);
-    }
+    this.minDate = new Date().toISOString();
+    this.startDate = new Date().toISOString();
+
   }
 
   navToRentals() {

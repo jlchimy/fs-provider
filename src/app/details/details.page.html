@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref='tabs/tab1'></ion-back-button>
     </ion-buttons>
-    <ion-label>Rental Details</ion-label>
+    <ion-label *ngIf="curr">Rental Details: {{curr.place}}</ion-label>
     <ion-icon (click)="navToEdit()" name="build"></ion-icon>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +15,5 @@
       <b>{{propertyName}}</b>
     </ion-card-content>
   </ion-card>
-
-
 
 </ion-content>
