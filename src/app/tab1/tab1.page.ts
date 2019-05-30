@@ -48,7 +48,8 @@ export class Tab1Page implements OnInit {
           propertyName: property.place,
           price: property.price,
           img: property.imgName, 
-          id: property.id
+          id: property.id,
+          stars: property.stars
         }
       });
   }

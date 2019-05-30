@@ -11,9 +11,9 @@ export class PropertyService {
 
   getAllProperties(): Array<Property> {
     this.properties = new Array();
-    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", 1);
-    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", 2);
-    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", 3);
+    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", 1, 2.5);
+    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", 2, 5);
+    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", 3, 4.5);
     this.properties.push(capetown);
     this.properties.push(rome);
     this.properties.push(odessa);

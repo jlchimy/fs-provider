@@ -7,7 +7,8 @@
     <ion-card *ngFor="let property of properties">
       <ion-card-content (click)="navToDetails(property)">
         <img src="{{property.imgName}}" alt="{{property.place}}">
-        <b>{{property.place}}</b>
+        <b>{{property.place}}:</b>
+        <ion-icon *ngFor="let stars of property.stars" name="{{stars}}"></ion-icon>
       </ion-card-content>
     </ion-card>
   </ion-list>

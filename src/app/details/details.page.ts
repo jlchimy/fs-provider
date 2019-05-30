@@ -15,6 +15,7 @@ export class DetailsPage implements OnInit {
   public price: number;
   public imgName: string;
   private propertyID: number;
+  public numStars: number;
   public curr: Property;
 
   public properties: Array<Property>;
@@ -43,6 +44,7 @@ export class DetailsPage implements OnInit {
       this.price = data.params.price;
       this.imgName = data.params.img;
       this.propertyID = data.params.id;
+      this.numStars = data.params.stars;
 
       this.curr = 
         this.propertyService.findPropertyById(this.propertyID);
