@@ -1,4 +1,4 @@
-export class Transaction {
+export class Property {
 
   public price: number;
   public place: string;

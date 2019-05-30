@@ -4,10 +4,10 @@
     <div style="color: grey">Select a listing to modify.</div>
   </ion-list>
   <ion-list class="grid">
-    <ion-card *ngFor="let transaction of transactions">
+    <ion-card *ngFor="let property of properties">
       <ion-card-content (click)="navToEdit()">
-        <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
-        <b>{{transaction.place}}</b>
+        <img src="{{property.imgName}}" alt="{{property.place}}">
+        <b>{{property.place}}</b>
       </ion-card-content>
     </ion-card>
   </ion-list>

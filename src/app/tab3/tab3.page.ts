@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { User, Transaction, Payment } from '../models/index';
+import { User, Property, Payment } from '../models/index';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { User, Transaction, Payment } from '../models/index';
 })
 export class Tab3Page implements OnInit {
 
-  public transactions: Array<Transaction>;
+  public properties: Array<Property>;
   public payments: string[];
 
   public users: Array<User>;
@@ -18,13 +18,13 @@ export class Tab3Page implements OnInit {
   constructor(
     private navCtrl: NavController
   ) {
-    this.transactions = new Array();
-    let capetown = new Transaction(300, "Cape Town", "assets/icon/capetown.jpg", "navToDetails");
-    let rome = new Transaction(350, "Rome", "assets/icon/rome.jpg", "navToDetails");
-    let odessa = new Transaction(350, "Odessa", "assets/icon/odessa.jpg", "navToDetails");
-    this.transactions.push(capetown);
-    this.transactions.push(rome);
-    this.transactions.push(odessa);
+    this.properties = new Array();
+    let capetown = new Property(300, "Cape Town", "assets/icon/capetown.jpg", "navToDetails");
+    let rome = new Property(350, "Rome", "assets/icon/rome.jpg", "navToDetails");
+    let odessa = new Property(350, "Odessa", "assets/icon/odessa.jpg", "navToDetails");
+    this.properties.push(capetown);
+    this.properties.push(rome);
+    this.properties.push(odessa);
 
     this.users = new Array();
 
