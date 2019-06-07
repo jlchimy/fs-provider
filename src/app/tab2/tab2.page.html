@@ -8,14 +8,17 @@
 
 <ion-content>
   <ion-list>
+    <!-- <ion-item>
+      <ion-input [(ngModel)]="property.location" type="text" name="city" placeholder="City"></ion-input>
+    </ion-item> -->
     <ion-item>
-      <ion-input type="text" name="city" placeholder="City"></ion-input>
+      <ion-input [(ngModel)]="property.name" type="text" name="name" placeholder="Name"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input type="text" name="address" placeholder="Address"></ion-input>
-      </ion-item>
+      <ion-input [(ngModel)]="property.location" type="text" name="address" placeholder="Location"></ion-input>
+    </ion-item>
     <ion-item>
-        <ion-input type="number" name="price" placeholder="Price">$</ion-input>
+      <ion-input [(ngModel)]="property.price" type="number" name="price" placeholder="Price">$</ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="padding-right: 5px">Number of Guests:</ion-label>
@@ -29,7 +32,7 @@
           <option value="8-10">8-10</option>
           <option value="10+">10+</option>
         </select>
-      </form> 
+      </form>
     </ion-item>
     <ion-item>
       <ion-label>Dates Available:</ion-label>
@@ -37,14 +40,19 @@
     <section>
       <ion-card>
         <ion-label style="padding: 10px">From: </ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31" [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
+          [(ngModel)]="myDate"></ion-datetime>
       </ion-card>
       <ion-card>
         <ion-label style="padding: 10px">To:</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31" [(ngModel)]="myDate1"></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
+          [(ngModel)]="myDate1"></ion-datetime>
       </ion-card>
-    </section>   
+    </section>
+    <ion-item>
+      <ion-input [(ngModel)]="property.imgURL" type="text" name="img" placeholder="Insert image URL here"></ion-input>
+    </ion-item>
   </ion-list>
 </ion-content>
 
-<ion-button (click)="navToRentals()"  shape="round" size="default">Submit</ion-button>
+<ion-button (click)="navToRentals()" shape="round" size="default">Submit</ion-button>
