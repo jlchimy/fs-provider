@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Property } from '../models';
-import { PropertyService } from '../services/property.service';
 
 @Component({
   selector: 'app-details',
@@ -23,8 +22,7 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private activatedRoute: ActivatedRoute,
-    private propertyService: PropertyService
+    private activatedRoute: ActivatedRoute
   ) { 
   }
 
@@ -49,10 +47,7 @@ export class DetailsPage implements OnInit {
       this.propertyID = data.params.id;
       this.numStars = data.params.stars;
 
-      this.curr = 
-        this.propertyService.findPropertyById(this.propertyID);
-
-      if (!this.curr) {
+      if (!this.name) {
         alert("Property Not Found");
       }
 
