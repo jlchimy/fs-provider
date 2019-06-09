@@ -31,17 +31,14 @@ export class RegisterPage implements OnInit {
 
   navToExplore() {
     this.httpClient
-      .post("http://localhost:5000/api/users", this.user)
+      .post("http://localhost:5000/api/providers", this.user)
       .subscribe(
         (response: any) => {
+          localStorage.setItem("userId", response.id);
           this.navCtrl
             .navigateForward('tabs', {
               queryParams: {
                 userId: response.id
-                // password: user.password,
-                // first: user.firstname,
-                // last: user.lastname,
-                // email: user.email
               }
             });
         },

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { User, Property, Payment } from '../models/index';
-import { PropertyService } from '../services/property.service';
-
+import { User, Property } from '../models/index';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -12,30 +11,12 @@ import { PropertyService } from '../services/property.service';
 export class Tab1Page implements OnInit {
 
   public properties: Array<Property>;
-  public payments: string[];
-
-  public users: Array<User>;
 
   constructor(
     private navCtrl: NavController,
-    private propertyService: PropertyService
+    private httpClient: HttpClient
   ) 
-  {
-    this.properties = this.propertyService.getAllProperties();
-
-    this.users = new Array();
-
-    let user1 = new User();
-    user1.firstname = "Jacob";
-    user1.lastname = "Chimerine";
-
-    let user2 = new User();
-    user1.firstname = "John";
-    user1.lastname = "Doe";
-
-    this.users.push(user1);
-    this.users.push(user2);
-  }
+  {}
 
   navToLogin() {
     this.navCtrl.navigateBack('');
@@ -45,9 +26,10 @@ export class Tab1Page implements OnInit {
     this.navCtrl
       .navigateBack('details', {
         queryParams: {
-          propertyName: property.place,
+          name: property.name,
+          location: property.location,
           price: property.price,
-          img: property.imgName, 
+          imgURL: property.imgURL, 
           id: property.id,
           stars: property.stars
         }
@@ -55,6 +37,14 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit() {
+    this.httpClient
+      .get("http://localhost:5000/api/properties")
+      .subscribe(
+        (response: Array<Property>) => {
+          console.log(response);
+          this.properties = response;
+        }
+      );
   }
 
 }

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref='tabs/tab3'></ion-back-button>
     </ion-buttons>
-    <ion-label>Edit Listing: {{propertyName}}</ion-label>
+    <ion-label>Edit Listing: {{name}}</ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +12,10 @@
     <ion-row justify-content-center style="margin: 0 3%">
       <ion-col>
         <div class="important">
-          <b>{{propertyName}}</b>
+          <b>{{name}} in {{location}}</b>
         </div>
         <div class="container">
-          <img src="{{imgName}}" alt="{{propertyName}}">
+          <img src="{{imgURL}}" alt="{{name}}">
           <div class="overlay">
             <div class="text">
               <i>*Enter sample review here*</i>

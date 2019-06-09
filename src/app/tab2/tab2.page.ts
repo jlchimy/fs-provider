@@ -17,7 +17,8 @@ export class Tab2Page implements OnInit {
     location: "",
     imgURL: "",
     price: 0,
-    userId: 1
+    userId: parseInt(localStorage.getItem("userId")),
+    stars: 0
   };
 
   constructor(

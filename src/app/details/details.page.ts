@@ -11,9 +11,10 @@ import { PropertyService } from '../services/property.service';
 })
 export class DetailsPage implements OnInit {
 
-  public propertyName: string;
+  public name: string;
+  public location: string;
   public price: number;
-  public imgName: string;
+  public imgURL: string;
   private propertyID: number;
   public numStars: number;
   public curr: Property;
@@ -31,18 +32,20 @@ export class DetailsPage implements OnInit {
     this.navCtrl
       .navigateForward('edit', {
         queryParams: {
-          propertyName: this.curr.place,
+          name: this.curr.name,
+          location: this.curr.location,
           price: this.curr.price,
-          img: this.curr.imgName
+          imgURL: this.curr.imgURL
         }
       });
   }
 
   ngOnInit() {
     let arrow = (data: any) => {
-      this.propertyName = data.params.propertyName;
+      this.name = data.params.name;
+      this.location = data.params.location;
       this.price = data.params.price;
-      this.imgName = data.params.img;
+      this.imgURL = data.params.imgURL;
       this.propertyID = data.params.id;
       this.numStars = data.params.stars;
 

@@ -22,9 +22,10 @@ export class LoginPage implements OnInit {
 
   navToRentals() {
     this.httpClient
-      .post("http://localhost:5000/api/users/authentication", this.user)
+      .post("http://localhost:5000/api/providers/authentication", this.user)
       .subscribe(
         (response: any) => {
+          localStorage.setItem("userId", response.id);
           this.navCtrl
             .navigateForward('tabs', {
               queryParams: {
@@ -47,7 +48,7 @@ export class LoginPage implements OnInit {
         break;
       case 401: message = "Please enter a password.";
         break;
-      case 402: message = "User not found.";
+      case 404: message = "User not found.";
         break;
       case 403: message = "Incorrect password.";
     }

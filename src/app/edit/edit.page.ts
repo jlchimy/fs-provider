@@ -9,9 +9,10 @@ import { NavController } from '@ionic/angular';
 })
 export class EditPage implements OnInit {
 
-  public propertyName: string;
+  public name: string;
+  public location: string;
   public price: number;
-  public imgName: string;
+  public imgURL: string;
 
   constructor(
     private navCtrl: NavController,
@@ -24,9 +25,10 @@ export class EditPage implements OnInit {
     }
 
     let arrow = (data: any) => {
-      this.propertyName = data.params.propertyName;
+      this.name = data.params.name;
+      this.location = data.params.location;
       this.price = data.params.price;
-      this.imgName = data.params.img;
+      this.imgURL = data.params.imgURL;
     }
 
     this.activatedRoute.queryParamMap.subscribe(

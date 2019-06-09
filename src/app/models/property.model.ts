@@ -1,16 +1,18 @@
 export class Property {
 
   public price: number;
-  public place: string;
-  public imgName: string;
+  public name: string;
+  public location: string;
+  public imgURL: string;
   public id: number;
   public numStars: number;
   public stars: String[];
 
-  constructor(price?: number, place?: string, img?: string, id?: number, numStars?: number) {
+  constructor(price?: number, place?: string, loc?: string, img?: string, id?: number, numStars?: number) {
     this.price = price || 0;
-    this.place = place || '';
-    this.imgName = img || '';
+    this.name = place || '';
+    this.location = loc || '';
+    this.imgURL = img || '';
     this.id = id || 0;
     this.numStars = numStars || 0;
     

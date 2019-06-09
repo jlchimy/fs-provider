@@ -21,6 +21,9 @@
       <ion-input [(ngModel)]="property.price" type="number" name="price" placeholder="Price">$</ion-input>
     </ion-item>
     <ion-item>
+      <ion-input [(ngModel)]="property.stars" type="number" name="price" placeholder="Rating (out of 5 stars)"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label style="padding-right: 5px">Number of Guests:</ion-label>
       <form action="/action_page.php">
         <select name="numGuestsRange">
