@@ -38,7 +38,7 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
     this.httpClient
-      .get("http://localhost:5000/api/properties/" + localStorage.getItem("userId"))
+      .get("http://localhost:5000/api/properties/provider/" + localStorage.getItem("userId"))
       .subscribe(
         (response: Array<Property>) => {
           console.log(response);
